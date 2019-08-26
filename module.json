@@ -1,0 +1,21 @@
+{
+    "id": "freshdesk",
+    "version": "1.0/0",
+    "name": "Freshdesk",
+    "description": "Integrate Freshdesk widget into your HumHub instance.",
+    "humhub": {
+        "minVersion": "1.2",
+		"maxVersion": "1.3"
+    },
+    "keywords": ["freshdesk", "module"],
+    "screenshots": ["resources/Screenshot_1.png", "resources/Screenshot_2.png", "resources/Screenshot_3.png", "resources/Screenshot_4.png"],
+	"homepage": "https://github.com/GreenMeteor",
+    "authors": [
+        {
+            "name": "Green Meteor",
+            "email": "realgreenmeteor@gmail.com",
+            "homepage": "https://github.com/GreenMeteor",
+            "role": "Owner"
+        }
+    ]
+}
