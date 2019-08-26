@@ -1,6 +1,6 @@
 {
     "id": "freshdesk",
-    "version": "1.0/0",
+    "version": "1.0.0",
     "name": "Freshdesk",
     "description": "Integrate Freshdesk widget into your HumHub instance.",
     "humhub": {
