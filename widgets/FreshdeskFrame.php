@@ -18,7 +18,13 @@ class FreshdeskFrame extends Widget
      */
     public function run()
     {
-        $url = Yii::$app->getModule('freshdesk')->getServerUrl() . '/widgets/feedback_widget/new';
+        $module = Yii::$app->getModule('freshdesk');
+        $url = $module->getServerUrl() . '/widgets/feedback_widget/new';
+
+        if (!$url) {
+            return '';
+        }
+
         return $this->render('freshdeskframe', ['freshdeskUrl' => $url]);
     }
 }
