@@ -45,14 +45,20 @@ class ConfigureForm extends Model
 
     public function loadSettings()
     {
-        $this->serverUrl = Yii::$app->getModule('freshdesk')->settings->get('serverUrl');
+        $module = Yii::$app->getModule('freshdesk');
+        $settings = $module->settings;
+
+        $this->serverUrl = $settings->get('serverUrl');
 
         return true;
     }
 
     public function save()
     {
-        Yii::$app->getModule('freshdesk')->settings->set('serverUrl', $this->serverUrl);
+        $module = Yii::$app->getModule('freshdesk');
+        $settings = $module->settings;
+
+        $settings->set('serverUrl', $this->serverUrl);
 
         return true;
     }
