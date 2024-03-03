@@ -2,14 +2,19 @@
 
 namespace humhub\modules\freshdesk;
 
+use humhub\modules\dashboard\widgets\Sidebar as DashBar;
+use humhub\modules\space\widgets\Sidebar as SpaceBar;
+use humhub\modules\admin\widgets\AdminMenu;
+use humhub\modules\freshdesk\Events;
+use humhub\modules\freshdesk\Module;
+
 return [
     'id' => 'freshdesk',
-    'class' => 'humhub\modules\freshdesk\Module',
+    'class' => Module::class,
     'namespace' => 'humhub\modules\freshdesk',
     'events' => [
-        ['class' => \humhub\modules\dashboard\widgets\Sidebar::class, 'event' => \humhub\modules\dashboard\widgets\Sidebar::EVENT_INIT, 'callback' => ['humhub\modules\freshdesk\Events', 'addFreshdeskFrame']],
-        ['class' => \humhub\modules\space\widgets\Sidebar::class, 'event' => \humhub\modules\space\widgets\Sidebar::EVENT_INIT, 'callback' => ['humhub\modules\freshdesk\Events', 'addFreshdeskFrame']],
-        ['class' => \humhub\modules\admin\widgets\AdminMenu::class, 'event' => \humhub\modules\admin\widgets\AdminMenu::EVENT_INIT, 'callback' => ['humhub\modules\freshdesk\Events', 'onAdminMenuInit']]
+        ['class' => DashBar::class, 'event' => DashBar::EVENT_INIT, 'callback' => [Events::class, 'addFreshdeskFrame']],
+        ['class' => SpaceBar::class, 'event' => SpaceBar::EVENT_INIT, 'callback' => [Events::class, 'addFreshdeskFrame']],
+        ['class' => AdminMenu::class, 'event' => AdminMenu::EVENT_INIT, 'callback' => [Events::class, 'onAdminMenuInit']]
     ]
 ];
-?>
