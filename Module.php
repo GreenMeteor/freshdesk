@@ -4,8 +4,9 @@ namespace humhub\modules\freshdesk;
 
 use Yii;
 use yii\helpers\Url;
+use humhub\components\Module as BaseModule;
 
-class Module extends \humhub\components\Module
+class Module extends BaseModule
 {
 
     public $resourcesPath = 'resources';
@@ -15,10 +16,9 @@ class Module extends \humhub\components\Module
      */
     public function getConfigUrl()
     {
-        return Url::to([
-                    '/freshdesk/admin'
-        ]);
+        return Url::to(['/freshdesk/admin']);
     }
+
     public function getServerUrl()
     {
         $url = $this->settings->get('serverUrl');
